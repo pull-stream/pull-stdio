@@ -1,7 +1,7 @@
 {
   "name": "pull-stdio",
   "description": "Stdio functions for pull streams.",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/jamen/pull-stdio",
   "author": "Jamen Marz (https://github.com/jamen)",
   "repository": "jamen/pull-stdio",
@@ -15,12 +15,27 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "eslint index.js"
   },
   "keywords": [
-    "generategenerator"
-  ]
+    "pull-stream",
+    "stdio",
+    "stdin",
+    "stdout",
+    "stderr",
+    "cli"
+  ],
+  "dependencies": {
+    "pull-stream": "^3.4.5",
+    "stream-to-pull-stream": "^1.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1"
+  }
 }
