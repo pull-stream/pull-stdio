@@ -1,5 +1,4 @@
 var toPull = require('stream-to-pull-stream')
-var pull = require('pull-stream')
 
 exports.stdin = stdin
 exports.stdout = stdout
@@ -13,22 +12,16 @@ exports.stderr = stderr
  */
 function stdin (options) {
   options = Object.assign({
-    stringify: true
+    encoding: 'utf8'
   }, options || {})
 
-  // Turn process.stdin into source pull stream
-  var source = toPull.source(process.stdin)
-
   // Handle `options.stringify`
-  if (options.stringify) {
-    return pull(source, pull.map(data => {
-      if (options.toString) return data.toString()
-      else return data
-    }))
+  if (options.encoding) {
+    process.stdin.setEncoding(options.encoding)
   }
 
-  // Return source if no options
-  return source
+  // Turn process.stdin into source pull stream
+  return toPull.source(process.stdin)
 }
 
 /**

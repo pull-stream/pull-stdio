@@ -50,13 +50,13 @@ A [source pull stream](https://github.com/pull-stream/pull-stream/blob/master/do
 
 #### Options
 
- - `stringify` (`Boolean`): Turn the `process.stdin` buffers into strings.  Defaults to `true`.
+ - `encoding` (`String`|`false`): Set the `process.stdin` encoding, or to `false`.  Defaults to `'utf8'`.
 
 #### Example
 
 ```js
 pull(
-  stdin(),
+  stdin({ encoding: false }),
   // ...
 )
 ```

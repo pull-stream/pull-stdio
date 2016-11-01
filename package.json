@@ -29,7 +29,6 @@
     "cli"
   ],
   "dependencies": {
-    "pull-stream": "^3.4.5",
     "stream-to-pull-stream": "^1.7.2"
   },
   "devDependencies": {
