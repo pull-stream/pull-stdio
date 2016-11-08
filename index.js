@@ -31,5 +31,5 @@ function stdin (options) {
  * pull(..., stderr())
  * ```
  */
-function stdout () { return toPull.sink(process.stdout) }
-function stderr () { return toPull.sink(process.stderr) }
+function stdout (cb) { return toPull.sink(process.stdout, cb) }
+function stderr (cb) { return toPull.sink(process.stderr, cb) }
